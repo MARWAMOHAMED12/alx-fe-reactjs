@@ -1,11 +1,17 @@
-import Counter from "./components/Counter";
+import UserContext from "./UserContext";
+import ProfilePage from "./components/ProfilePage";
 
 function App() {
+  const userData = {
+    name: "Marwa",
+    email: "marwa@example.com",
+    age: 22,
+  };
+
   return (
-    <div>
-      <h1>My Counter App</h1>
-      <Counter />
-    </div>
+    <UserContext.Provider value={userData}>
+      <ProfilePage />
+    </UserContext.Provider>
   );
 }
 
